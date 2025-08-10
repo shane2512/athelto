@@ -2,10 +2,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Dashboard from "@/components/app/Dashboard";
 import PlanBuilder from "@/components/app/PlanBuilder";
 import ProgressCharts from "@/components/app/ProgressCharts";
+import Hyperspeed from "@/components/visual/Hyperspeed";
+import { hyperspeedPresets } from "@/components/visual/hyperspeedPresets";
 
 const Index = () => {
   return (
-    <div className="min-h-screen app-bg">
+    <div className="relative min-h-screen app-bg">
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <Hyperspeed effectOptions={hyperspeedPresets.one as any} />
+      </div>
       <nav className="sticky top-0 z-10 nav-glass">
         <div className="container mx-auto flex h-14 items-center justify-between">
           <a href="/" className="font-semibold">Gym Planner</a>

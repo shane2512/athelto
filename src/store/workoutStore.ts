@@ -93,9 +93,33 @@ export function useWorkoutStore() {
     setLogs((prev) => [{ ...log, id }, ...prev]);
   };
 
-  const todayName = useMemo(() => DAYS_LIST[new Date().getDay() === 0 ? 6 : new Date().getDay() - 1], []);
+  // Trigger re-computation of today at midnight automatically
+  const [dayTick, setDayTick] = useState(0);
+  useEffect(() => {
+    const schedule = () => {
+      const now = new Date();
+      const next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 1, 0);
+      const ms = next.getTime() - now.getTime();
+      const timeout = window.setTimeout(() => {
+        setDayTick((t) => t + 1);
+        schedule();
+      }, ms);
+      return timeout;
+    };
+    const tid = schedule();
+    return () => clearTimeout(tid);
+  }, []);
 
-  const todaysPlan = useMemo(() => plan.find((p) => p.day === todayName) ?? { day: todayName, exercises: [] }, [plan, todayName]);
+  const todayName = useMemo(() => {
+    const idx = new Date().getDay() === 0 ? 6 : new Date().getDay() - 1;
+    return DAYS_LIST[idx];
+  }, [dayTick]);
+
+  const todaysPlan = useMemo(
+    () => plan.find((p) => p.day === todayName) ?? { day: todayName, exercises: [] },
+    [plan, todayName]
+  );
+
 
   const lastTrainedByGroup = useMemo(() => {
     const map = new Map<MuscleGroup, string>();
