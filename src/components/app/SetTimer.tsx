@@ -52,7 +52,7 @@ export default function SetTimer() {
   };
 
   return (
-    <Card className="card-elevated p-4 flex flex-col gap-4">
+    <Card className="card-elevated glass p-4 flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold">Rest Timer</h3>
         <div className="text-sm text-muted-foreground">Between sets</div>

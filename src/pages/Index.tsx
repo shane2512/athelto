@@ -5,8 +5,8 @@ import ProgressCharts from "@/components/app/ProgressCharts";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <nav className="sticky top-0 z-10 border-b backdrop-blur supports-[backdrop-filter]:bg-background/70">
+    <div className="min-h-screen app-bg">
+      <nav className="sticky top-0 z-10 nav-glass">
         <div className="container mx-auto flex h-14 items-center justify-between">
           <a href="/" className="font-semibold">Gym Planner</a>
           <div className="hidden sm:flex gap-2">
@@ -17,7 +17,7 @@ const Index = () => {
         </div>
       </nav>
       <Tabs defaultValue="dashboard" className="container mx-auto py-6">
-        <TabsList>
+        <TabsList className="glass">
           <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
           <TabsTrigger value="plan">Plan</TabsTrigger>
           <TabsTrigger value="progress">Progress</TabsTrigger>

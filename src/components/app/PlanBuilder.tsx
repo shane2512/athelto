@@ -29,7 +29,7 @@ export default function PlanBuilder() {
         <p className="text-muted-foreground">Add exercises per day with sets, reps, and weights.</p>
       </header>
 
-      <Card className="card-elevated p-5">
+      <Card className="card-elevated glass p-5">
         <form onSubmit={submit} className="grid md:grid-cols-6 gap-4">
           <div className="md:col-span-1">
             <Label>Day</Label>
@@ -77,7 +77,7 @@ export default function PlanBuilder() {
 
       <div className="grid md:grid-cols-2 gap-6">
         {plan.map((d) => (
-          <Card key={d.day} className="card-elevated p-5">
+          <Card key={d.day} className="card-elevated glass p-5">
             <h3 className="font-semibold mb-3">{d.day}</h3>
             {d.exercises.length === 0 ? (
               <p className="text-sm text-muted-foreground">No exercises added.</p>

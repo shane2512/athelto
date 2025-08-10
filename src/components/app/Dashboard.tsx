@@ -37,7 +37,7 @@ export default function Dashboard() {
       </header>
 
       <section className="grid md:grid-cols-3 gap-6">
-        <Card className="card-elevated p-5 md:col-span-2">
+        <Card className="card-elevated glass p-5 md:col-span-2">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold">Today • {todayName}</h2>
             <div className="flex gap-2 flex-wrap">
@@ -71,7 +71,7 @@ export default function Dashboard() {
       </section>
 
       <section className="grid md:grid-cols-2 gap-6">
-        <Card className="card-elevated p-5">
+        <Card className="card-elevated glass p-5">
           <h2 className="text-xl font-semibold mb-4">Weekly Plan Overview</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {plan.map((d) => (
@@ -88,7 +88,7 @@ export default function Dashboard() {
           </div>
         </Card>
 
-        <Card className="card-elevated p-5">
+        <Card className="card-elevated glass p-5">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold">Progress • Muscle Group</h2>
             <Select value={group} onValueChange={(v) => setGroup(v as MuscleGroup)}>
@@ -117,7 +117,7 @@ export default function Dashboard() {
       </section>
 
       <section>
-        <Card className="card-elevated p-5">
+        <Card className="card-elevated glass p-5">
           <h2 className="text-xl font-semibold mb-3">Needs Attention</h2>
           {inactive.length > 0 ? (
             <div className="flex flex-wrap gap-2">

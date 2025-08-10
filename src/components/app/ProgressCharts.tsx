@@ -41,7 +41,7 @@ export default function ProgressCharts() {
         <p className="text-muted-foreground">Log your lifts and see trends for each muscle group.</p>
       </header>
 
-      <Card className="card-elevated p-5">
+      <Card className="card-elevated glass p-5">
         <form onSubmit={submit} className="grid md:grid-cols-6 gap-4">
           <div>
             <Label>Date</Label>
@@ -76,7 +76,7 @@ export default function ProgressCharts() {
         </form>
       </Card>
 
-      <Card className="card-elevated p-5">
+      <Card className="card-elevated glass p-5">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-xl font-semibold">Trend • {group}</h3>
         </div>
