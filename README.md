@@ -1,72 +1,120 @@
-# Welcome to your Lovable project
+Here’s a **README template** tailored for the `athelto` project you pointed to (a React + TypeScript app built with Vite, shadcn-ui, and Tailwind CSS). It’s informed by the repository’s existing README content and typical conventions. You can adjust specifics as needed.
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/8f5c368a-c68e-4aef-a21c-d73292978005
+```markdown
+# Athelto
 
-## How can I edit this code?
+A sleek, dark-theme fitness workout planner and muscle progress tracker with interactive interest and 3D-style UI (inspired).
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
-Simply visit the [Lovable Project](https://lovable.dev/projects/8f5c368a-c68e-4aef-a21c-d73292978005) and start prompting.
+## Live Demo
 
-Changes made via Lovable will be committed automatically to this repo.
+Explore the app at: [https://athelto.netlify.app](https://athelto.netlify.app)
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Vite** — fast frontend tooling and development server  
+- **React (TypeScript)** — core framework for building UI  
+- **shadcn-ui** — unstyled, accessible UI components for React  
+- **Tailwind CSS** — utility-first styling setup  
+- **Deployment** via Netlify
 
-Follow these steps:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Getting Started (Local Development)
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### 1. Clone the repo  
+```bash
+git clone https://github.com/shane2512/athelto.git
+cd athelto
 ```
 
-**Edit a file directly in GitHub**
+### 2. Install dependencies  
+```bash
+npm install
+# or
+bun install
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 3. Startup dev server  
+```bash
+npm run dev
+# or
+bun dev
+```
+Visit the app at `http://localhost:5173` (or as indicated in the terminal).
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+/src
+  ├── components/      # Reusable UI components (shadcn-ui based)
+  ├── supabase/        # Supabase integration (if applicable)
+  └── ...              # Your main app logic and pages
+tailwind.config.ts     # Tailwind setup (colors, theming, dark mode)
+vite.config.ts         # Vite configuration
+index.html             # HTML template
+package.json           # Scripts, dependencies
+```
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Features (MVP)
 
-## How can I deploy this project?
+- Dark-themed UI with clean typography and contrast
+- Workout plan builder (create, edit sessions)
+- Log workouts by muscle groups
+- Visual progress tracking (charts or 3D-style indicators)
+- Responsive and (partially) interactive UI leveraging Tailwind and shadcn-ui
+- Quick actions like "Log Workout," "Add Exercise," etc.
 
-Simply open [Lovable](https://lovable.dev/projects/8f5c368a-c68e-4aef-a21c-d73292978005) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## Deploy & Publish
 
-Yes, you can!
+#### Deploy via Lovable
+1. Open the project in [Lovable](https://lovable.dev)
+2. Click **Share → Publish**
+3. Optional: Connect a custom domain under **Project → Settings → Domains**
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+#### Deploy via Netlify
+1. Push the repo to GitHub
+2. Login to [Netlify](https://netlify.com)
+3. Create a new site from Git repo, choose `athelto`, and follow prompts
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+## Contributing
+
+Contributions are welcome! Feel free to:
+- Improve UI/UX or add 3D visual components (e.g., via `react-three-fiber`)
+- Enhance workout analytics (charts, history trends)
+- Add authentication, social or profile features, etc.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## Contact
+
+For questions or suggestions, reach out via GitHub Discussions or Issues.
+
+---
+
+*README generated based on Athelto’s current structure and setup.*  
+```
+
+---
+
+You can copy and paste this into the `README.md` file in your repo. Let me know if you'd like to optimize it further—for example, adding setup for 3D modules, mockups, or detailed contributor guidelines!
