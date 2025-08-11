@@ -17,16 +17,16 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 258 85% 58%;
+    --primary: 250 100% 69%; /* Soft Purple #7A5FFF */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 171 100% 41%; /* Teal #00D1B2 */
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 200 90% 55%;
+    --accent: 0 100% 71%; /* Coral #FF6B6B */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,7 +34,7 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 258 85% 58%;
+    --ring: 250 100% 69%;
 
     --radius: 0.5rem;
 
@@ -47,13 +47,12 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Extended design tokens */
-    --brand: 258 85% 58%;
+    --brand: 250 100% 69%;
     --brand-foreground: 0 0% 100%;
-    --brand-glow: 258 95% 64%;
+    --brand-glow: 250 100% 74%;
 
     /* Gradients & shadows */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--brand)) 0%, hsl(278 92% 60%) 50%, hsl(var(--accent)) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand)) 0%, hsl(250 100% 72%) 50%, hsl(var(--accent)) 100%);
     --shadow-elevated: 0 10px 30px -12px hsl(var(--brand) / 0.35);
     --shadow-glow: 0 0 40px hsl(var(--brand-glow) / 0.45);
 
@@ -71,7 +70,7 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 258 85% 62%;
+    --primary: 250 100% 69%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -80,7 +79,7 @@ All colors MUST be HSL.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 200 90% 55%;
+    --accent: 0 100% 71%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -88,7 +87,7 @@ All colors MUST be HSL.
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 258 85% 62%;
+    --ring: 250 100% 69%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -115,7 +114,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans tracking-tight leading-[1.4];
   }
 }
 
