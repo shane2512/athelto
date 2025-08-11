@@ -5,7 +5,7 @@ import { BloomEffect, EffectComposer, EffectPass, RenderPass, SMAAEffect, SMAAPr
 type Options = {
   onSpeedUp: () => void;
   onSlowDown: () => void;
-  distortion: keyof typeof distortions;
+  distortion: string;
   length: number;
   roadWidth: number;
   islandWidth: number;
@@ -41,7 +41,7 @@ type Options = {
 };
 
 const Hyperspeed = ({ effectOptions }: { effectOptions: Options }) => {
-  const appRef = useRef<App | null>(null);
+  const appRef = useRef<any | null>(null);
 
   useEffect(() => {
     if (appRef.current) {
@@ -302,7 +302,7 @@ const Hyperspeed = ({ effectOptions }: { effectOptions: Options }) => {
       initPasses() {
         this.renderPass = new RenderPass(this.scene, this.camera);
         this.bloomPass = new EffectPass(this.camera, new BloomEffect({ luminanceThreshold: 0.2, luminanceSmoothing: 0, resolutionScale: 1 }));
-        const smaaPass = new EffectPass(this.camera, new SMAAEffect({ preset: SMAAPreset.MEDIUM, searchImage: SMAAEffect.searchImageDataURL, areaImage: SMAAEffect.areaImageDataURL }));
+        const smaaPass = new EffectPass(this.camera, new SMAAEffect({ preset: SMAAPreset.MEDIUM }));
         this.renderPass.renderToScreen = false;
         this.bloomPass.renderToScreen = false;
         smaaPass.renderToScreen = true;
@@ -745,14 +745,10 @@ const Hyperspeed = ({ effectOptions }: { effectOptions: Options }) => {
 
     const container = document.getElementById('lights')!;
     const options: any = { ...effectOptions };
-    const distortions: any = { mountainDistortion: null } as any; // placeholder type fix above
-    options.distortion = (function() {
-      const map: any = { mountainDistortion: null } as any; // overwritten below
-      return {} as any;
-    })();
+    // Map provided distortion key to implementation; fallback to turbulentDistortion
+    const distortion = (distortions as any)[options.distortion as keyof typeof distortions] || (distortions as any).turbulentDistortion;
 
-    // Use the earlier defined distortions directly
-    const myApp = new App(container, { ...effectOptions, distortion: distortions[(effectOptions as any).distortion] || (distortions as any).turbulentDistortion } as any);
+    const myApp = new App(container, { ...options, distortion } as any);
     appRef.current = myApp;
     myApp.loadAssets().then(() => myApp.init());
 
