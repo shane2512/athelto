@@ -92,57 +92,98 @@ const BodyDiagram = () => {
         <div className="flex-1">
           <h3 className="text-xl font-semibold mb-6 text-center">Anatomical Progress Map</h3>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Front View */}
             <div className="relative">
               <h4 className="text-lg font-medium mb-4 text-center">Front View</h4>
               <div className="relative aspect-[3/4] bg-card rounded-2xl border border-border/50 overflow-hidden p-4">
-                <svg viewBox="0 0 200 300" className="w-full h-full">
+                <svg viewBox="0 0 300 400" className="w-full h-full">
                   {/* Head */}
-                  <ellipse cx="100" cy="30" rx="15" ry="20" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <ellipse cx="150" cy="40" rx="20" ry="25" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
                   
-                  {/* Shoulders/Deltoids */}
-                  <ellipse cx="75" cy="60" rx="12" ry="15" fill={getIntensityColor(getMuscleById("Deltoid").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
-                  <ellipse cx="125" cy="60" rx="12" ry="15" fill={getIntensityColor(getMuscleById("Deltoid").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  {/* Neck */}
+                  <rect x="140" y="60" width="20" height="15" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
                   
-                  {/* Pectoralis */}
-                  <ellipse cx="100" cy="75" rx="18" ry="20" fill={getIntensityColor(getMuscleById("Pectoralis").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  {/* Deltoids (Shoulders) - Front */}
+                  <path d="M110 85 Q105 75 95 80 L85 90 Q85 105 95 110 L110 105 Z" 
+                    fill={getIntensityColor(getMuscleById("Deltoid").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  <path d="M190 85 Q195 75 205 80 L215 90 Q215 105 205 110 L190 105 Z" 
+                    fill={getIntensityColor(getMuscleById("Deltoid").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  
+                  {/* Pectoralis Major */}
+                  <path d="M120 85 Q150 75 180 85 L175 110 Q150 120 125 110 Z" 
+                    fill={getIntensityColor(getMuscleById("Pectoralis").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
                   
                   {/* Biceps */}
-                  <ellipse cx="65" cy="90" rx="8" ry="18" fill={getIntensityColor(getMuscleById("Biceps").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
-                  <ellipse cx="135" cy="90" rx="8" ry="18" fill={getIntensityColor(getMuscleById("Biceps").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  <ellipse cx="95" cy="125" rx="8" ry="20" 
+                    fill={getIntensityColor(getMuscleById("Biceps").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  <ellipse cx="205" cy="125" rx="8" ry="20" 
+                    fill={getIntensityColor(getMuscleById("Biceps").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
                   
-                  {/* Rectus Abdominis */}
-                  <rect x="88" y="100" width="24" height="35" rx="4" fill={getIntensityColor(getMuscleById("Rectus Abdominis").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  {/* Forearms */}
+                  <ellipse cx="95" cy="160" rx="6" ry="18" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <ellipse cx="205" cy="160" rx="6" ry="18" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  
+                  {/* Rectus Abdominis (Six Pack) */}
+                  <path d="M130 120 L170 120 L165 165 L135 165 Z" 
+                    fill={getIntensityColor(getMuscleById("Rectus Abdominis").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  
+                  {/* Ab muscle segments */}
+                  <line x1="140" y1="130" x2="160" y2="130" stroke="#fff" strokeWidth="0.5"/>
+                  <line x1="140" y1="140" x2="160" y2="140" stroke="#fff" strokeWidth="0.5"/>
+                  <line x1="140" y1="150" x2="160" y2="150" stroke="#fff" strokeWidth="0.5"/>
+                  <line x1="150" y1="120" x2="150" y2="165" stroke="#fff" strokeWidth="0.5"/>
                   
                   {/* Obliques */}
-                  <ellipse cx="78" cy="120" rx="8" ry="15" fill={getIntensityColor(getMuscleById("Obliques").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
-                  <ellipse cx="122" cy="120" rx="8" ry="15" fill={getIntensityColor(getMuscleById("Obliques").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  <path d="M115 130 Q125 125 130 135 L135 155 Q125 160 115 150 Z" 
+                    fill={getIntensityColor(getMuscleById("Obliques").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  <path d="M185 130 Q175 125 170 135 L165 155 Q175 160 185 150 Z" 
+                    fill={getIntensityColor(getMuscleById("Obliques").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
                   
-                  {/* Hip area */}
-                  <rect x="88" y="140" width="24" height="15" rx="3" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  {/* Hip/Pelvis area */}
+                  <path d="M130 165 L170 165 L175 185 L125 185 Z" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
                   
                   {/* Quadriceps */}
-                  <ellipse cx="88" cy="180" rx="10" ry="25" fill={getIntensityColor(getMuscleById("Quadriceps").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
-                  <ellipse cx="112" cy="180" rx="10" ry="25" fill={getIntensityColor(getMuscleById("Quadriceps").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  <path d="M120 185 L135 185 L140 240 L130 250 L115 240 Z" 
+                    fill={getIntensityColor(getMuscleById("Quadriceps").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  <path d="M165 185 L180 185 L185 240 L170 250 L160 240 Z" 
+                    fill={getIntensityColor(getMuscleById("Quadriceps").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
                   
-                  {/* Lower legs */}
-                  <ellipse cx="88" cy="230" rx="8" ry="20" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
-                  <ellipse cx="112" cy="230" rx="8" ry="20" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  {/* Quad muscle definition lines */}
+                  <line x1="125" y1="200" x2="130" y2="235" stroke="#fff" strokeWidth="0.5"/>
+                  <line x1="170" y1="200" x2="175" y2="235" stroke="#fff" strokeWidth="0.5"/>
+                  
+                  {/* Shins */}
+                  <ellipse cx="127" cy="285" rx="8" ry="25" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <ellipse cx="173" cy="285" rx="8" ry="25" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  
+                  {/* Calves */}
+                  <ellipse cx="127" cy="320" rx="10" ry="20" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <ellipse cx="173" cy="320" rx="10" ry="20" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
                   
                   {/* Feet */}
-                  <ellipse cx="88" cy="265" rx="6" ry="10" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
-                  <ellipse cx="112" cy="265" rx="6" ry="10" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <ellipse cx="127" cy="355" rx="8" ry="12" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <ellipse cx="173" cy="355" rx="8" ry="12" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
                 </svg>
               </div>
             </div>
@@ -151,50 +192,85 @@ const BodyDiagram = () => {
             <div className="relative">
               <h4 className="text-lg font-medium mb-4 text-center">Back View</h4>
               <div className="relative aspect-[3/4] bg-card rounded-2xl border border-border/50 overflow-hidden p-4">
-                <svg viewBox="0 0 200 300" className="w-full h-full">
+                <svg viewBox="0 0 300 400" className="w-full h-full">
                   {/* Head */}
-                  <ellipse cx="100" cy="30" rx="15" ry="20" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <ellipse cx="150" cy="40" rx="20" ry="25" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  
+                  {/* Neck */}
+                  <rect x="140" y="60" width="20" height="15" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
                   
                   {/* Trapezius */}
-                  <polygon points="100,45 85,55 85,80 115,80 115,55" fill={getIntensityColor(getMuscleById("Trapezius").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  <path d="M125 75 L175 75 L180 95 L170 110 L130 110 L120 95 Z" 
+                    fill={getIntensityColor(getMuscleById("Trapezius").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
                   
-                  {/* Deltoids (back) */}
-                  <ellipse cx="75" cy="60" rx="12" ry="15" fill={getIntensityColor(getMuscleById("Deltoid").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
-                  <ellipse cx="125" cy="60" rx="12" ry="15" fill={getIntensityColor(getMuscleById("Deltoid").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  {/* Deltoids (Shoulders) - Back */}
+                  <path d="M110 85 Q105 75 95 80 L85 90 Q85 105 95 110 L110 105 Z" 
+                    fill={getIntensityColor(getMuscleById("Deltoid").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  <path d="M190 85 Q195 75 205 80 L215 90 Q215 105 205 110 L190 105 Z" 
+                    fill={getIntensityColor(getMuscleById("Deltoid").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
                   
                   {/* Triceps */}
-                  <ellipse cx="65" cy="90" rx="8" ry="18" fill={getIntensityColor(getMuscleById("Triceps").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
-                  <ellipse cx="135" cy="90" rx="8" ry="18" fill={getIntensityColor(getMuscleById("Triceps").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  <ellipse cx="95" cy="125" rx="8" ry="20" 
+                    fill={getIntensityColor(getMuscleById("Triceps").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  <ellipse cx="205" cy="125" rx="8" ry="20" 
+                    fill={getIntensityColor(getMuscleById("Triceps").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
                   
                   {/* Latissimus Dorsi */}
-                  <polygon points="85,85 115,85 120,120 80,120" fill={getIntensityColor(getMuscleById("Latissimus Dorsi").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  <path d="M115 110 L125 120 L130 160 L120 170 L105 165 L110 125 Z" 
+                    fill={getIntensityColor(getMuscleById("Latissimus Dorsi").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  <path d="M185 110 L175 120 L170 160 L180 170 L195 165 L190 125 Z" 
+                    fill={getIntensityColor(getMuscleById("Latissimus Dorsi").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
                   
                   {/* Lower back */}
-                  <rect x="88" y="125" width="24" height="15" rx="3" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <path d="M130 120 L170 120 L165 165 L135 165 Z" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  
+                  {/* Hip/Pelvis area */}
+                  <path d="M130 165 L170 165 L175 185 L125 185 Z" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
                   
                   {/* Gluteus Maximus */}
-                  <ellipse cx="100" cy="150" rx="20" ry="12" fill={getIntensityColor(getMuscleById("Gluteus Maximus").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  <path d="M125 185 L175 185 L180 210 L170 220 L130 220 L120 210 Z" 
+                    fill={getIntensityColor(getMuscleById("Gluteus Maximus").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  
+                  {/* Glute definition line */}
+                  <line x1="150" y1="185" x2="150" y2="220" stroke="#fff" strokeWidth="0.5"/>
                   
                   {/* Hamstrings */}
-                  <ellipse cx="88" cy="180" rx="10" ry="25" fill={getIntensityColor(getMuscleById("Hamstrings").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
-                  <ellipse cx="112" cy="180" rx="10" ry="25" fill={getIntensityColor(getMuscleById("Hamstrings").level)} 
-                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2" strokeWidth="1" stroke="#fff"/>
+                  <path d="M120 220 L135 220 L140 265 L130 275 L115 265 Z" 
+                    fill={getIntensityColor(getMuscleById("Hamstrings").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  <path d="M165 220 L180 220 L185 265 L170 275 L160 265 Z" 
+                    fill={getIntensityColor(getMuscleById("Hamstrings").level)} 
+                    stroke="#fff" strokeWidth="1"
+                    className="cursor-pointer transition-all duration-300 hover:stroke-white hover:stroke-2"/>
+                  
+                  {/* Hamstring muscle definition lines */}
+                  <line x1="125" y1="235" x2="130" y2="260" stroke="#fff" strokeWidth="0.5"/>
+                  <line x1="170" y1="235" x2="175" y2="260" stroke="#fff" strokeWidth="0.5"/>
                   
                   {/* Calves */}
-                  <ellipse cx="88" cy="230" rx="8" ry="20" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
-                  <ellipse cx="112" cy="230" rx="8" ry="20" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <ellipse cx="127" cy="305" rx="10" ry="25" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <ellipse cx="173" cy="305" rx="10" ry="25" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
                   
                   {/* Feet */}
-                  <ellipse cx="88" cy="265" rx="6" ry="10" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
-                  <ellipse cx="112" cy="265" rx="6" ry="10" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <ellipse cx="127" cy="355" rx="8" ry="12" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
+                  <ellipse cx="173" cy="355" rx="8" ry="12" fill="#E5E7EB" stroke="#D1D5DB" strokeWidth="1"/>
                 </svg>
               </div>
             </div>
