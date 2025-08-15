@@ -5,6 +5,7 @@ import ProgressCharts from "@/components/app/ProgressCharts";
 import Hyperspeed from "@/components/visual/Hyperspeed";
 import { hyperspeedPresets } from "@/components/visual/hyperspeedPresets";
 import MembersDashboard from "@/components/app/MembersDashboard";
+import BodyDiagram from "@/components/visual/BodyDiagram";
 
 const Index = () => {
   return (
@@ -28,7 +29,7 @@ const Index = () => {
           <TabsTrigger value="plan">Plan</TabsTrigger>
           <TabsTrigger value="progress">Progress</TabsTrigger>
         </TabsList>
-        <TabsContent value="dashboard" id="dashboard"><div className="space-y-6"><MembersDashboard /><Dashboard /></div></TabsContent>
+        <TabsContent value="dashboard" id="dashboard"><div className="space-y-6"><MembersDashboard /><BodyDiagram /><Dashboard /></div></TabsContent>
         <TabsContent value="plan"><PlanBuilder /></TabsContent>
         <TabsContent value="progress" id="progress"><ProgressCharts /></TabsContent>
       </Tabs>
