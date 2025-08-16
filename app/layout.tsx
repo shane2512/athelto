@@ -1,12 +1,17 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { DM_Sans } from 'next/font/google'
 import './globals.css'
+import { ThemeProvider } from 'next-themes'
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { Providers } from "@/components/providers/providers";
 
-const inter = Inter({ subsets: ['latin'] })
+const dmSans = DM_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Gym Planner Pro - Track Your Fitness Journey',
-  description: 'Advanced fitness tracking with interactive body diagram and workout planning',
+  title: 'Reps Roadmap — Ultra‑modern Gym Planner',
+  description: 'Ultra‑modern gym planner with live member statuses, smooth microinteractions, and a playful dark UI.',
 }
 
 export default function RootLayout({
@@ -15,9 +20,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={inter.className}>
-        {children}
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={dmSans.className}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <Providers>
+            <TooltipProvider>
+              <Toaster />
+              <Sonner />
+              {children}
+            </TooltipProvider>
+          </Providers>
+        </ThemeProvider>
       </body>
     </html>
   )

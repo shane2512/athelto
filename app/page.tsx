@@ -1,44 +1,46 @@
+"use client";
+
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Dashboard from "@/components/app/Dashboard";
+import PlanBuilder from "@/components/app/PlanBuilder";
+import ProgressCharts from "@/components/app/ProgressCharts";
+import Hyperspeed from "@/components/visual/Hyperspeed";
+import { hyperspeedPresets } from "@/components/visual/hyperspeedPresets";
+import MembersDashboard from "@/components/app/MembersDashboard";
+import BodyDiagram from "@/components/visual/BodyDiagram";
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <nav className="border-b">
-        <div className="container mx-auto px-4 py-4">
-          <h1 className="text-2xl font-bold text-primary">Gym Planner Pro</h1>
+    <div className="relative min-h-screen app-bg">
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <Hyperspeed effectOptions={hyperspeedPresets.one as any} />
+      </div>
+      <nav className="sticky top-0 z-10 nav-glass">
+        <div className="container mx-auto flex h-14 items-center justify-between">
+          <a href="/" className="font-semibold">Gym Planner</a>
+          <div className="hidden sm:flex gap-2">
+            <a href="#dashboard" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Dashboard</a>
+            <a href="#plan" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Plan</a>
+            <a href="#progress" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Progress</a>
+          </div>
         </div>
       </nav>
-      
-      <main className="container mx-auto px-4 py-8">
-        <div className="space-y-6">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-2">Welcome to Your Fitness Journey</h2>
-            <p className="text-muted-foreground">Track your progress with our interactive body diagram</p>
+      <Tabs defaultValue="dashboard" className="container mx-auto py-6">
+        <TabsList className="glass">
+          <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
+          <TabsTrigger value="plan">Plan</TabsTrigger>
+          <TabsTrigger value="progress">Progress</TabsTrigger>
+        </TabsList>
+        <TabsContent value="dashboard" id="dashboard">
+          <div className="space-y-6">
+            <MembersDashboard />
+            <BodyDiagram />
+            <Dashboard />
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 border rounded-lg">
-              <h3 className="font-semibold mb-2">Dashboard</h3>
-              <p className="text-sm text-muted-foreground">View your daily progress and plans</p>
-            </div>
-            
-            <div className="p-6 border rounded-lg">
-              <h3 className="font-semibold mb-2">Body Map</h3>
-              <p className="text-sm text-muted-foreground">Interactive anatomical progress tracking</p>
-            </div>
-            
-            <div className="p-6 border rounded-lg">
-              <h3 className="font-semibold mb-2">Workout Planner</h3>
-              <p className="text-sm text-muted-foreground">Plan your weekly exercise routine</p>
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <p className="text-green-500 font-medium">✅ Application is running successfully!</p>
-            <p className="text-sm text-muted-foreground mt-2">
-              The Next.js app is now fully operational on port 3000
-            </p>
-          </div>
-        </div>
-      </main>
+        </TabsContent>
+        <TabsContent value="plan"><PlanBuilder /></TabsContent>
+        <TabsContent value="progress" id="progress"><ProgressCharts /></TabsContent>
+      </Tabs>
     </div>
-  )
+  );
 }
