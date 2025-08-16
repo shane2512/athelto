@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useWorkoutStore, MuscleGroup } from "@/store/workoutStore";
+import { Card } from "../ui/card";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
+import { useWorkoutStore, MuscleGroup } from "../../store/workoutStore";
 
 export default function PlanBuilder() {
   const { DAYS_LIST, addExercise, removeExercise, plan } = useWorkoutStore();

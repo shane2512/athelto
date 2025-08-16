@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import { useWorkoutStore, MuscleGroup } from "@/store/workoutStore";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { useWorkoutStore, MuscleGroup } from "../../store/workoutStore";
+import { Card } from "../ui/card";
+import { Badge } from "../ui/badge";
 
 interface AnatomicalMuscle {
   name: string;
