@@ -1,4 +1,4 @@
-import { motion, useSpring, useTransform } from "motion/react";
+import { motion, useSpring, useTransform } from "framer-motion";
 import { useEffect } from "react";
 
 function Number({ mv, number, height }: { mv: any; number: number; height: number }) {

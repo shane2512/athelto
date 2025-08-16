@@ -1,11 +1,11 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Dashboard from "@/components/app/Dashboard";
-import PlanBuilder from "@/components/app/PlanBuilder";
-import ProgressCharts from "@/components/app/ProgressCharts";
-import Hyperspeed from "@/components/visual/Hyperspeed";
-import { hyperspeedPresets } from "@/components/visual/hyperspeedPresets";
-import MembersDashboard from "@/components/app/MembersDashboard";
-import BodyDiagram from "@/components/visual/BodyDiagram";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
+import Dashboard from "../components/app/Dashboard";
+import PlanBuilder from "../components/app/PlanBuilder";
+import ProgressCharts from "../components/app/ProgressCharts";
+import Hyperspeed from "../components/visual/Hyperspeed";
+import { hyperspeedPresets } from "../components/visual/hyperspeedPresets";
+import MembersDashboard from "../components/app/MembersDashboard";
+import BodyDiagram from "../components/visual/BodyDiagram";
 
 const Index = () => {
   return (
